@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elakkiya N - Portfolio Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/three@0.126.1/build/three.min.js"></script>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    .glow-text {
+      text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1rem;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #00bfff;
+    }
+    .section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .lang-bar, .skill-bar {
+      width: 100%;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+    .lang-bar-fill, .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00bfff, #ff69b4);
+      transition: width 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas-bg" class="fixed inset-0 -z-10"></div>
+  <header class="text-center py-16">
+    <h1 class="text-4xl md:text-6xl font-bold glow-text">Elakkiya Natarajaperumal</h1>
+    <p class="text-lg md:text-xl text-gray-400 mt-4">MCA Student | Aspiring Data Scientist</p>
+    <a href="#declaration" class="mt-6 inline-block px-6 py-2 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition">
+      Download Resume
+    </a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section py-12 bg-black/20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold glow-text mb-4">About Me</h2>
+      <p class="text-gray-300 leading-relaxed">
+        I am <span class="font-semibold text-white">Elakkiya N</span>, a passionate MCA student with strong interests in 
+        <span class="text-cyan-400">Data Science, Cloud Computing, and Cybersecurity</span>.  
+        My vision is to leverage advanced technologies to build intelligent solutions 
+        that solve real-world challenges. I am committed to continuous learning and innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center glow-text mb-6">Education</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="card">
+          <h3 class="text-xl font-semibold glow-text">MCA</h3>
+          <p class="text-gray-400">PSNA College of Engineering and Technology</p>
+          <p class="text-gray-500">2024 - 2026</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold glow-text">B.Sc. Computer Science</h3>
+          <p class="text-gray-400">G.T.N. Arts College, Dindigul</p>
+          <p class="text-gray-500">2021 - 2024</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold glow-text">HSC</h3>
+          <p class="text-gray-400">Sourashtra Girls Hr. Sec. School, Dindigul</p>
+          <p class="text-gray-500">2021</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold glow-text">SSLC</h3>
+          <p class="text-gray-400">Sourashtra Girls Hr. Sec. School, Dindigul</p>
+          <p class="text-gray-500">2019</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Project Section -->
+  <section id="projects" class="section py-12 bg-black/20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center glow-text mb-6">Curriculum Project</h2>
+      <div class="card max-w-3xl mx-auto">
+        <h3 class="text-lg font-semibold glow-text">Scheduling File Transfer System in Cloud using Java</h3>
+        <p class="text-gray-400 mt-2">
+          Automates cloud transfers with security and scheduling via Java, improving reliability and efficiency of file management in cloud environments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="section py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center glow-text mb-6">Technical Skills</h2>
+      <div class="max-w-4xl mx-auto space-y-6">
+        <div>
+          <h4>Python</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 60%;"></div></div>
+          <p class="text-gray-400 text-center">60%</p>
+        </div>
+        <div>
+          <h4>Java</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+          <p class="text-gray-400 text-center">85%</p>
+        </div>
+        <div>
+          <h4>HTML</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          <p class="text-gray-400 text-center">90%</p>
+        </div>
+        <div>
+          <h4>CSS</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          <p class="text-gray-400 text-center">90%</p>
+        </div>
+        <div>
+          <h4>JavaScript</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+          <p class="text-gray-400 text-center">75%</p>
+        </div>
+        <div>
+          <h4>C++</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+          <p class="text-gray-400 text-center">75%</p>
+        </div>
+        <div>
+          <h4>Oracle Cloud Infrastructure (OCI)</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+          <p class="text-gray-400 text-center">85%</p>
+        </div>
+        <div>
+          <h4>C</h4>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+          <p class="text-gray-400 text-center">70%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Soft Skills Section -->
+<section id="soft-skills" class="section py-12 bg-black/20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center glow-text mb-6">Soft Skills</h2>
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="card p-4 text-center">Leadership</div>
+      <div class="card p-4 text-center">Communication</div>
+      <div class="card p-4 text-center">Collaboration</div>
+      <div class="card p-4 text-center">Adaptability</div>
+      <div class="card p-4 text-center">Creativity</div>
+      <div class="card p-4 text-center">Problem-Solving</div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Languages Section -->
+  <section id="languages" class="section py-12 bg-black/20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center glow-text mb-6">Languages</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center max-w-4xl mx-auto">
+        <div class="card p-4 text-center">
+          <h3 class="text-base font-semibold glow-text mb-2">Tamil</h3>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+          <p class="text-gray-400 mt-2">Native</p>
+        </div>
+        <div class="card p-4 text-center">
+          <h3 class="text-base font-semibold glow-text mb-2">English</h3>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:85%"></div></div>
+          <p class="text-gray-400 mt-2">Professional</p>
+        </div>
+        <div class="card p-4 text-center">
+          <h3 class="text-base font-semibold glow-text mb-2">Hindi</h3>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:65%"></div></div>
+          <p class="text-gray-400 mt-2">Intermediate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="section py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center glow-text mb-6">Certificates</h2>
+      <div class="space-y-4 max-w-4xl mx-auto">
+        <div class="card p-4">
+          <p>Participation - PPT on Artificial Intelligence (AI) in Parvathy's Arts and Science College, Dindigul.</p>
+        </div>
+        <div class="card p-4">
+          <p>Participation - HR Skills, One-day Workshop, Tareeqa Global Solution Pvt. Ltd, (attended through YouTube)</p>
+        </div>
+        <div class="card p-4">
+          <p>Participation - Data Science/Data Analytics One-day Workshop, G. Pulla Reddy Engineering College (attended through YouTube) </p>
+        </div>
+        <div class="card p-4">
+          <p>Participation - IoT Systems and Robotics One-day Workshop (attended through YouTube)</p>
+        </div>
+        <div class="card p-4">
+          <p>Participation - Internet of Things (IoT) One-day Workshop, Government Degree College, Karvetinagaram (attended through YouTube)</p>
+        </div>
+        <div class="card p-4">
+          <p>Participation - AI One-day Workshop by Mr. Abhinav Devagupta (attended through YouTube)</p>
+        </div>
+        <div class="card p-4">
+          <p>Completion - C++ Training</p>
+        </div>
+        <div class="card p-4">
+          <p>Completion - C Training</p>
+        </div>
+        <div class="card p-4">
+          <p>Completion - Python Essentials 1, Cisco Networking Academy</p>
+        </div>
+        <div class="card p-4">
+          <p>Completion - Python Essentials 2, Cisco Networking Academy</p>
+        </div>
+        <div class="card p-4">
+          <p>Completion - Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate (by Oracle)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies Section -->
+  <section id="hobbies" class="section py-12 bg-black/20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center glow-text mb-6">Hobbies</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center max-w-4xl mx-auto">
+        <div class="card p-4 text-center"><p>To play Badminton</p></div>
+        <div class="card p-4 text-center"><p>To do Gardening</p></div>
+        <div class="card p-4 text-center"><p>To walk</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Declaration Section -->
+  <section id="declaration" class="section py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="card p-6 text-center">
+        <h2 class="text-2xl font-bold glow-text mb-4">Declaration</h2>
+        <p class="text-gray-300 leading-relaxed">
+          I hereby declare that all the details mentioned above are in accordance with the truth 
+          and fact as per my knowledge and I hold the responsibility for the correctness of the 
+          above-mentioned particulars.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black/70 backdrop-blur-lg text-gray-400 text-center py-6 mt-6">
+    <p class="mb-2">📍 Dindigul, Tamil Nadu | 🎓 PSNA COLLEGE OF ENGINEERING AND TECHNOLOGY</p>
+    <p class="mb-1">📧 elakkiyanatarajaperumal@gmail.com</p>
+    <p class="text-sm">© 2025 Elakkiya Natarajaperumal. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById("canvas-bg").appendChild(renderer.domElement);
+    const stars = [];
+    const starGeometry = new THREE.SphereGeometry(0.1, 24, 24);
+    const starMaterial = new THREE.MeshBasicMaterial({ color: 0x00bfff });
+    for (let i = 0; i < 500; i++) {
+      const star = new THREE.Mesh(starGeometry, starMaterial);
+      star.position.x = (Math.random() - 0.5) * 200;
+      star.position.y = (Math.random() - 0.5) * 200;
+      star.position.z = -Math.random() * 200;
+      scene.add(star);
+      stars.push(star);
+    }
+    camera.position.z = 5;
+    function animate() {
+      requestAnimationFrame(animate);
+      stars.forEach(star => {
+        star.position.z += 0.2;
+        if (star.position.z > 5) star.position.z = -200;
+      });
+      renderer.render(scene, camera);
+    }
+    animate();
+    const sections = document.querySelectorAll('.section');
+    function reveal() {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add('visible');
+      });
+    }
+    window.addEventListener('scroll', reveal);
+    reveal();
+  </script>
+</body>
+</html>
